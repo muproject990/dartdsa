@@ -1,9 +1,7 @@
 class Stack<E> {
   final List<E> _storage;
-  Stack() : _storage = <E>[];
+  Stack.of(Iterable<E> elements) : _storage = List<E>.of(elements);
 
-  // !for observing content of stack in future we use
-  // ? veryimportant relation
   @override
   String toString() {
     return '---Top---\n'
