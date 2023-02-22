@@ -1,8 +1,6 @@
 class Stack<E> {
-  Stack() : _storage = <E>[];
   final List<E> _storage;
-  // lst implements lifo which is similar to the stack
-  // here is is generics which  represents any data types
+  Stack() : _storage = <E>[];
 
   // !for observing content of stack in future we use
   // ? veryimportant relation
