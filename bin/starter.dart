@@ -36,9 +36,9 @@ void printInReverse<E>(List<E> list) {
 /// h((e))llo(world)()  // balanced parentheses
 /// (hello world        // unbalanced parentheses
 void challengeTwo() {
-  print(checkParentheses('h((e))llo(world)()'));
-  print(checkParentheses('(hello world'));
-  print(checkParentheses('hello)(world'));
+  print(checkParentheses('h((e))lloxd(world)()'));
+  print(checkParentheses('(hello)) world'));
+  print(checkParentheses('((hello))()(world)'));
 }
 
 bool checkParentheses(String text) {
@@ -46,7 +46,7 @@ bool checkParentheses(String text) {
 
   final open = '('.codeUnitAt(0);
   final close = ')'.codeUnitAt(0);
-
+    
   for (int codeUnit in text.codeUnits) {
     if (codeUnit == open) {
       stack.push(codeUnit);
