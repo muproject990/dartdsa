@@ -8,3 +8,4 @@ void main(List<String> args) {
   list.append(4);
   print(list);
 }
+// push entered new values in head and append in tails
