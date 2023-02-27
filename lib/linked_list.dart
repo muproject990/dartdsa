@@ -21,7 +21,6 @@ class LinkedList<E> {
   void push(E value) {
     head = Node(value: value, next: head);
     tail ??= head;
-   
   }
 
   // !Appending to the end of list
@@ -32,8 +31,9 @@ class LinkedList<E> {
       return;
     }
     tail!.next = Node(value: value);
+    //tail: Node(1->3)
     tail = tail!.next;
-  
+    //tail: Node(3)
   }
 
   @override
