@@ -1,11 +1,16 @@
+
+
 import 'package:starter/linked_list.dart';
 
 void main(List<String> args) {
-  final list = LinkedList<int>();
-  list.push(1);
+  final list=LinkedList<int>();
+  list.push(3);
   list.push(2);
-  list.append(3);
-  list.append(4);
-  print(list);
+  list.push(1);
+  print("Before: $list");
+  var middleNode=list.nodeAt(1);
+
+  list.insertAfter(middleNode!, 42);
+  print('After: $list');
+  
 }
-// push entered new values in head and append in tails

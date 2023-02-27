@@ -5,9 +5,7 @@ class Node<T> {
 
   @override
   String toString() {
-    if (next == null) {
-      return '$value';
-    }
+    if (next == null) return '$value';
     return '$value->${next.toString()}';
   }
 }
@@ -16,29 +14,44 @@ class LinkedList<E> {
   Node<E>? head;
   Node<E>? tail;
   bool get isEmpty => head == null;
-
-// !Push
+  //! Push
   void push(E value) {
     head = Node(value: value, next: head);
     tail ??= head;
   }
 
-  // !Appending to the end of list
-  // ?Tail End INSERTION
+  //! Append
   void append(E value) {
     if (isEmpty) {
       push(value);
-      return;
     }
-    tail!.next = Node(value: value);
-    //tail: Node(1->3)
-    tail = tail!.next;
-    //tail: Node(3)
+  }
+
+  // !insert in the middle of the list
+  
+
+  Node<E>? nodeAt(int index) {
+    var currentNode = head;
+    var currentIndex = 0;
+    while (currentNode != null && currentIndex < index) {
+      currentNode = currentNode.next;
+      currentIndex += 1;
+    }
+    return currentNode;
+  }
+
+  Node<E> insertAfter(Node<E> node, E value) {
+    if (tail == null) {
+      append(value);
+      return tail!;
+    }
+    node.next = Node(value: value, next: node.next);
+    return node.next!;
   }
 
   @override
   String toString() {
-    if (isEmpty) return "Empty list";
+    if (isEmpty) return 'Empty LinkedList';
     return head.toString();
   }
 }
