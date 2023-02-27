@@ -1,10 +1,14 @@
-import 'dart:html';
-class Node<T>{
-  Node({required this.value,this.next});
+class Node<T> {
+  Node({required this.value, this.next});
   T value;
   Node<T>? next;
-}
 
+  @override
+  String toString() {
+    if (next == null) return '$value';
+    return '$value->${next.toString()}';
+  }
+}
 
 class LinkedList<E> {
   Node<E>? head;
